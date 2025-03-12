@@ -10,10 +10,11 @@ module GoogleHttpActionmailer
     attr_reader :service
     attr_reader :message_options
     attr_reader :delivery_options
+    attr_reader :settings
 
     def initialize(params)
       @service = Google::Apis::GmailV1::GmailService.new
-
+      @settings = {}
       @service.authorization = params[:authorization]
       @service.request_options.merge params[:request_options]
 
